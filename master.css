@@ -1,0 +1,94 @@
+/* Fonts?: Lato, Oxygen, Oxygen Mono. All on google fonts. */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+body {
+  font-family: "Roboto Mono", sans-serif;
+}
+
+div {
+  background-color: rgba(233,171,88,.5);
+  border: 2px solid rgb(233,171,88);
+  border-radius: 5px;
+}
+
+div#content {
+  width: 1695px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas: 
+    "header header header"
+    ".      main   ."
+    "footer footer footer"
+  ;
+}
+
+div#header {
+  grid-area: header;
+}
+
+div#main {
+  grid-area: main;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 50px auto 50px;
+  grid-template-areas: "title"
+                       "nav"
+                       "comic" 
+                       "down"; /* TODO: Rename area based on content */
+}
+
+div#title-container  {
+  grid-area: title;
+  margin: auto;
+}
+
+div#nav {
+  grid-area: nav;
+}
+
+img#comic {
+  grid-area: comic;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+div#bottom {
+  grid-area: down;
+}
+
+div#footer {
+  grid-area: footer;
+}
+
+@media only screen and (max-width: 1700px) {
+  div {
+    background-color: rgba(100,70,200,.5);
+    border: 2px solid rgb(100,70,200);
+  }
+  
+  div#content {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 777px) {
+  div {
+    background-color: rgba(100,200,88,.5);
+    border: 2px solid rgb(100,200,88);
+  }
+  
+  div#content {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px auto 50px;
+    grid-template-areas: 
+      "header"
+      "main"
+      "footer"
+    ;
+  }
+}
